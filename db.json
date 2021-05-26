@@ -1,6 +1,10 @@
 {
   "counter": {
+<<<<<<< HEAD
     "id": 1,
     "value": 20
+=======
+    "value": 10
+>>>>>>> main
   }
 }
