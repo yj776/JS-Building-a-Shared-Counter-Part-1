@@ -5,27 +5,27 @@ async function main(){
     const decrementButton = document.querySelector('#decrement-button');
 
 
-        let response = await fetch('http://localhost:9001/counter');
+        const response = await fetch('http://localhost:9001/counter');
         let result = await response.json()
         console.log(result)
     
 
-    let countValue = 0;
+    let countValue = result.value;
 
     function increment(){
         countValue++;
         countContainer.textContent = countValue;
         console.log(countContainer.textContent)
 
-        fetch('http://localhost:9001/counter'), {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                value: countValue
-            })
-        }
+        // fetch('http://localhost:9001/counter'), {
+        //     method: 'PATCH',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         value: countValue
+        //     })
+        // }
     }
 
     function decrement(){
@@ -33,15 +33,15 @@ async function main(){
         countContainer.textContent = countValue;
         console.log(countContainer.textContent)
 
-        fetch('http://localhost:9001/counter'), {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                value: countValue
-            })
-        }
+        // fetch('http://localhost:9001/counter'), {
+        //     method: 'PATCH',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         value: countValue
+        //     })
+        // }
     }
 
     function refresh(){
